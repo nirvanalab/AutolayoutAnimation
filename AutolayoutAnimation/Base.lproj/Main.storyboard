@@ -1,14 +1,18 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="AutolayoutAnimation" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +20,51 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kOS-yo-iEv">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="75"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Closed View" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="umB-Ag-ACD">
+                                        <rect key="frame" x="128.5" y="29.5" width="117" height="26"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="epG-4S-yy4">
+                                        <rect key="frame" x="337" y="18.5" width="30" height="48"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <state key="normal" title="+"/>
+                                        <connections>
+                                            <action selector="onToggleMenu:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Z7d-c9-P8H"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="epG-4S-yy4" firstAttribute="centerY" secondItem="umB-Ag-ACD" secondAttribute="centerY" id="1Jz-v1-uG7"/>
+                                    <constraint firstItem="umB-Ag-ACD" firstAttribute="centerY" secondItem="kOS-yo-iEv" secondAttribute="centerY" constant="5" identifier="TitleCenterY" id="DAn-nT-CeS"/>
+                                    <constraint firstAttribute="height" constant="75" id="TH5-6i-1bf"/>
+                                    <constraint firstItem="umB-Ag-ACD" firstAttribute="centerX" secondItem="kOS-yo-iEv" secondAttribute="centerX" id="Yoo-jb-vnh"/>
+                                    <constraint firstAttribute="trailing" secondItem="epG-4S-yy4" secondAttribute="trailing" constant="8" id="hUl-ne-2h1"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="kOS-yo-iEv" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="dnL-aa-21p"/>
+                            <constraint firstItem="kOS-yo-iEv" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="o2e-iW-931"/>
+                            <constraint firstAttribute="trailing" secondItem="kOS-yo-iEv" secondAttribute="trailing" id="x2V-KM-Pmr"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="buttonMenu" destination="epG-4S-yy4" id="oH6-IS-gKi"/>
+                        <outlet property="menuHeightConstraint" destination="TH5-6i-1bf" id="qru-Un-df7"/>
+                        <outlet property="titleLabel" destination="umB-Ag-ACD" id="fPU-EY-lWa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="130.88455772113943"/>
         </scene>
     </scenes>
 </document>
